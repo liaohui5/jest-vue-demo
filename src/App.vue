@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    init env
+    <TodoList></TodoList>
   </div>
 </template>
 
 <script>
+import TodoList from "./views/TodoList";
 export default {
   name: "App",
-  components: {}
+  components: { TodoList }
 };
 </script>
 
