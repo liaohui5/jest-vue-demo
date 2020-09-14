@@ -4,34 +4,29 @@
       <TodoHeader @add-todo="addUndoItem" />
     </div>
     <div>
-      <p>未完成的任务:</p>
-      <ul>
-        <li v-for="item in undos" :key="item">
-          <span> {{ item }} </span>
-          <button>完成任务</button>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <p>已经完成的任务:</p>
-      <ul>
-        <li v-for="item in dones" :key="item">{{ item }}</li>
-      </ul>
+      <Undos :list="undos" @delete-undo="deleteUndoItem" />
     </div>
   </div>
 </template>
 
 <script>
 import TodoHeader from "../components/TodoHeader";
+import Undos from "../components/Undos";
 export default {
-  components: { TodoHeader },
+  components: { TodoHeader, Undos },
   data: () => ({
     undos: [], // 为完成的
     dones: [] // 已完成的
   }),
   methods: {
+    // 增加未完成任务
     addUndoItem(todo) {
       this.undos.push(todo);
+    },
+
+    // 删除未完成任务
+    deleteUndoItem(index) {
+      this.undos.splice(index, 1);
     }
   }
 };
