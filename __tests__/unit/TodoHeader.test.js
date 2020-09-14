@@ -10,6 +10,10 @@ describe("TodoHeader.vue", () => {
     input = wrapper.find("input[data-jest='input']");
   });
 
+  it("TodoHeader dom变化的时候, 提示确认更新", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("TodoHeader 应该包含 input", () => {
     expect(input.exists()).toBe(true);
   });

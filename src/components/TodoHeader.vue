@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <input
-      type="text"
-      data-jest="input"
-      v-model="inputVal"
-      @keyup.enter="addTodo"
-    />
+  <div class="header-wrapper">
+    <div class="header-content">
+      <span>Todo List</span>
+      <input
+        type="text"
+        data-jest="input"
+        placeholder="add todo item"
+        v-model="inputVal"
+        @keyup.enter="addTodo"
+      />
+    </div>
   </div>
 </template>
 
@@ -24,4 +28,24 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.header-wrapper {
+  width: 100%;
+  line-height: 80px;
+  background: #333;
+  .header-content {
+    width: 600px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 24px;
+    input {
+      float: right;
+      width: 360px;
+      margin-top: 25px;
+      line-height: 24px;
+      outline: none;
+      text-indent: 10px;
+    }
+  }
+}
+</style>

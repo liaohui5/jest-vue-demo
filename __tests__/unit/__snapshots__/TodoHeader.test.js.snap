@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoHeader.vue TodoHeader dom变化的时候, 提示确认更新 1`] = `
+<div class="header-wrapper">
+  <div class="header-content"><span>Todo List</span> <input type="text" data-jest="input" placeholder="add todo item"></div>
+</div>
+`;
